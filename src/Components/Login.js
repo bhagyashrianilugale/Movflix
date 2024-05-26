@@ -1,16 +1,25 @@
 import { useRef, useState } from "react";
 import Header from "./Header";
-import checkValidData from "../utils/validate"
- 
-const Login = ()=>{
+import checkValidData from "../utils/validate";
+import { createUserWithEmailAndPassword } from "firebase/auth";
+import { signInWithEmailAndPassword } from "firebase/auth";
+import { auth } from "../utils/firebase";
+import { updateProfile } from "firebase/auth";
+import { useDispatch } from "react-redux";
+import { addUser } from "../utils/userSlice";
 
-    const [isSignIn, setIsSignIn ] = useState(true);
-    const [errorMessage, setErrorMessage] = useState(null);
+const Login = ()=>{
+    
+    const [ isSignIn, setIsSignIn ] = useState(true);
+    const [ errorMessage, setErrorMessage ] = useState(null);
+    const [ successMessage, setSuccessMessage ] = useState(null);
+
+    const dispatch = useDispatch();
 
     const email = useRef(null);
     const password = useRef(null);
     const confirm_password = useRef(0);
-    const full_name = useRef(false);
+    const username = useRef(false);
 
     const toggleForm = ()=>{
           setIsSignIn(!isSignIn);
@@ -18,12 +27,64 @@ const Login = ()=>{
 
     const handleBtnClick = ()=>{
         //Validate the form data
-        const message = checkValidData(email.current.value, password.current.value,confirm_password.current.value, full_name.current.value);
-        console.log(confirm_password.current.value);
-        console.log(full_name.current.value);
-       console.log(message);
-
+        const message = checkValidData(email.current.value, password.current.value, confirm_password.current.value, username.current.value);
         setErrorMessage(message);
+
+        if(message) return;
+
+        if( !isSignIn ){
+              //Sign up Logic
+              createUserWithEmailAndPassword(auth, email.current.value, password.current.value)
+                       .then((userCredential) => {
+                          // Signed up 
+                       const user = userCredential.user;
+
+                       updateProfile(user, {
+                        displayName: username.current.value, 
+                        photoURL: "https://avatars.githubusercontent.com/u/137088907?v=4"
+                      }).then(() => {
+                        // Profile updated!
+                        const displayName = auth.currentUser.displayName;
+                        const email = auth.currentUser.email;
+                        const uid = auth.currentUser.uid;
+                        const photoURL = auth.currentUser.photoURL
+                        dispatch(
+                            addUser({uid:uid, 
+                                     email: email, 
+                                     displayName: displayName, 
+                                     photoURL: photoURL})
+                        )
+                    
+                      }).catch((error) => {
+                        // An error occurred
+                        setErrorMessage(error.message);
+                      });
+                      
+                       setSuccessMessage(`Welcome! ${username.current.value}`);
+                      
+                    })
+                      .catch((error) => {
+                      const errorCode = error.code;
+                      const errorMessage = error.message;
+                      setErrorMessage(errorCode+ "/" + errorMessage);
+                
+                    });
+            }
+        else {
+            // Sign In Logic
+          signInWithEmailAndPassword(auth, email.current.value, password.current.value)
+                     .then((userCredential) => {
+                      // Signed in 
+                     const user = userCredential.user;
+                     setSuccessMessage("Welcome! again");
+                    })
+                   .catch((error) => {
+                      const errorCode = error.code;
+                      const errorMessage = error.message;
+                      setErrorMessage(errorCode+ "/" + errorMessage);
+                });
+
+        }
     }
     return(
     <div>
@@ -34,15 +95,15 @@ const Login = ()=>{
             </div>
 
             <form onSubmit= { (e)=> e.preventDefault() }className="w-3/12 absolute p-12 
-                          bg-black my-36 mx-auto right-0 left-0
+                          bg-black my-12 mx-auto right-0 left-0
                           text-white rounded-xl bg-opacity-80
                            cursor-pointer">
                 <h1 className="font-bold text-3xl py-4">{isSignIn ? "Sign In" : "Sign Up"}</h1>
 
                 {!isSignIn &&  <input type="text"
-                      ref={full_name}
+                      ref={username}
                       required
-                      placeholder="Full name" 
+                      placeholder="Username" 
                       className="p-2 my-2 w-full rounded-lg bg-black bg-opacity-20 border border-slate-50"></input>
                 }
 
@@ -63,9 +124,8 @@ const Login = ()=>{
                        required
                        placeholder="Confirm Password" 
                        className="p-2 my-2 w-full rounded-lg bg-black bg-opacity-20  border border-slate-50"></input>}
-                
-
-                <p className="text-red-500 font-bold p-2">{errorMessage}</p>
+               
+                <p className="text-red-500 font-bold p-2">{successMessage ? successMessage : errorMessage }</p>
 
                 <button className="p-2 my-6 bg-red-700 w-full  rounded-lg" onClick={handleBtnClick}>{isSignIn ? "Sign In" : "Sign Up"}</button>
 
