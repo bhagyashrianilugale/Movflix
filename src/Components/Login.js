@@ -7,6 +7,7 @@ import { auth } from "../utils/firebase";
 import { updateProfile } from "firebase/auth";
 import { useDispatch } from "react-redux";
 import { addUser } from "../utils/userSlice";
+import { USER_AVATAR } from "../utils/Constants";
 
 const Login = ()=>{
     
@@ -34,14 +35,14 @@ const Login = ()=>{
 
         if( !isSignIn ){
               //Sign up Logic
-              createUserWithEmailAndPassword(auth, email.current.value, password.current.value)
+          createUserWithEmailAndPassword(auth, email.current.value, password.current.value)
                        .then((userCredential) => {
                           // Signed up 
                        const user = userCredential.user;
 
                        updateProfile(user, {
                         displayName: username.current.value, 
-                        photoURL: "https://avatars.githubusercontent.com/u/137088907?v=4"
+                        photoURL: USER_AVATAR
                       }).then(() => {
                         // Profile updated!
                         const displayName = auth.currentUser.displayName;
@@ -53,26 +54,26 @@ const Login = ()=>{
                                      email: email, 
                                      displayName: displayName, 
                                      photoURL: photoURL})
-                        )
-                    
+                        );
+
+                        setSuccessMessage(`Welcome! ${username.current.value}`);
+                      
                       }).catch((error) => {
                         // An error occurred
                         setErrorMessage(error.message);
                       });
                       
-                       setSuccessMessage(`Welcome! ${username.current.value}`);
-                      
-                    })
+                      })
                       .catch((error) => {
                       const errorCode = error.code;
                       const errorMessage = error.message;
                       setErrorMessage(errorCode+ "/" + errorMessage);
-                
-                    });
-            }
-        else {
-            // Sign In Logic
-          signInWithEmailAndPassword(auth, email.current.value, password.current.value)
+                      });
+                      }
+
+               else {
+                  // Sign In Logic
+                   signInWithEmailAndPassword(auth, email.current.value, password.current.value)
                      .then((userCredential) => {
                       // Signed in 
                      const user = userCredential.user;
@@ -85,7 +86,9 @@ const Login = ()=>{
                 });
 
         }
+
     }
+
     return(
     <div>
             <Header/>
