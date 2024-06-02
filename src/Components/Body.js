@@ -2,8 +2,7 @@ import Login from "../Components/Login";
 
 const Body = ()=>{
     
-   
- return(
+return(
     <div><Login/></div>    
 )
 };

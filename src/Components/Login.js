@@ -7,7 +7,7 @@ import { auth } from "../utils/firebase";
 import { updateProfile } from "firebase/auth";
 import { useDispatch } from "react-redux";
 import { addUser } from "../utils/userSlice";
-import { USER_AVATAR } from "../utils/Constants";
+import { BG_URL, USER_AVATAR } from "../utils/Constants"; 
 
 const Login = ()=>{
     
@@ -50,13 +50,14 @@ const Login = ()=>{
                         const uid = auth.currentUser.uid;
                         const photoURL = auth.currentUser.photoURL
                         dispatch(
-                            addUser({uid:uid, 
+                            addUser({uid: uid, 
                                      email: email, 
                                      displayName: displayName, 
                                      photoURL: photoURL})
                         );
-
+                       
                         setSuccessMessage(`Welcome! ${username.current.value}`);
+                        Event.stopPropagation();
                       
                       }).catch((error) => {
                         // An error occurred
@@ -93,15 +94,15 @@ const Login = ()=>{
     <div>
             <Header/>
             <div className="absolute">
-                   <img src="https://assets.nflxext.com/ffe/siteui/vlv3/a99688ca-33c3-4099-9baa-07a2e2acb398/ca15fd28-b624-4852-8bfe-9cdd5c88475d/IN-en-20240520-popsignuptwoweeks-perspective_alpha_website_small.jpg" 
+                   <img src={BG_URL}
                   alt="background_img"/>
             </div>
 
-            <form onSubmit= { (e)=> e.preventDefault() }className="w-3/12 absolute p-12 
-                          bg-black my-12 mx-auto right-0 left-0
+            <form onSubmit= { (e)=> e.preventDefault() }className="w-3/12 absolute p-12
+                          bg-black my-[10%] mx-auto right-0 left-0
                           text-white rounded-xl bg-opacity-80
                            cursor-pointer">
-                <h1 className="font-bold text-3xl py-4">{isSignIn ? "Sign In" : "Sign Up"}</h1>
+                <h1 className="font-bold text-2xl py-2">{isSignIn ? "Sign In" : "Sign Up"}</h1>
 
                 {!isSignIn &&  <input type="text"
                       ref={username}
@@ -114,23 +115,23 @@ const Login = ()=>{
                        ref={email}
                        required
                        placeholder="Email address" 
-                       className="p-2 my-2 w-full rounded-lg  bg-black bg-opacity-20 border border-slate-50"></input>
+                       className="p-1 my-1 w-full rounded-lg  bg-black bg-opacity-20 border border-slate-50"></input>
 
                 <input type="password" 
                        ref={password}
                        required
                        placeholder="Password" 
-                       className="p-2 my-2 w-full rounded-lg bg-black bg-opacity-20 border border-slate-50"></input>
+                       className="p-2 my-1 w-full rounded-lg bg-black bg-opacity-20 border border-slate-50"></input>
 
                 {!isSignIn && <input type="password" 
                        ref={confirm_password}
                        required
                        placeholder="Confirm Password" 
-                       className="p-2 my-2 w-full rounded-lg bg-black bg-opacity-20  border border-slate-50"></input>}
+                       className="p-2 my-1 w-full rounded-lg bg-black bg-opacity-20  border border-slate-50"></input>}
                
-                <p className="text-red-500 font-bold p-2">{successMessage ? successMessage : errorMessage }</p>
+                <p className="text-red-700 font-bold p-2">{successMessage ? successMessage : errorMessage }</p>
 
-                <button className="p-2 my-6 bg-red-700 w-full  rounded-lg" onClick={handleBtnClick}>{isSignIn ? "Sign In" : "Sign Up"}</button>
+                <button className="p-1 my-2 bg-red-700 w-full  rounded-lg" onClick={handleBtnClick}>{isSignIn ? "Sign In" : "Sign Up"}</button>
 
                 <p className="font-semibold" onClick={toggleForm}>
                     {isSignIn ? "New to Netflix? Sign Up Now" : "Already registered? Sign In now"}
