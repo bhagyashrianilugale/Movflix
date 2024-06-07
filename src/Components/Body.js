@@ -4,7 +4,7 @@ const Body = ()=>{
     
 return(
     <div><Login/></div>    
-)
+  );
 };
 
 export default Body;

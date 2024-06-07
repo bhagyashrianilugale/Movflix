@@ -11,6 +11,8 @@ import { FaArrowRightFromBracket } from "react-icons/fa6";
 import { toggleGptSearchView } from "../utils/gptSlice";
 import { SUPPORTED_LANG } from "../utils/Constants";
 import { changeLanguage } from "../utils/conFigSlice";
+import { SiGooglegemini } from "react-icons/si";
+import { IoMdHome } from "react-icons/io";
 
 const Header =  ()=>{
     
@@ -70,12 +72,12 @@ const Header =  ()=>{
                {user && (
                     <div className="flex p-4">
                         {showGptSearch && (
-                            <select className="mx-2 bg-gray-950 text-white" onChange={handleLangChange}>
-                            {SUPPORTED_LANG.map((lang)=> <option key={lang.identifier}>{lang.identifier}</option>)}
+                            <select className="mx-2 px-2 bg-gray-950 text-white" onChange={handleLangChange}>
+                            {SUPPORTED_LANG.map((lang)=> <option key={lang.identifier}>{lang.name}</option>)}
                         </select>
                         )}
-                    <button className="py-2 px-2 bg-red-800 rounded-lg  text-white" onClick={handleGptSearchClick}>
-                         { showGptSearch ? "Home Page" : "Gpt Search"}
+                    <button className="py-2 px-2 bg-red-800 rounded-lg text-white" onClick={handleGptSearchClick}>
+                         { showGptSearch ?   <div className="flex"><IoMdHome className="text-2xl mr-2"/>  Page</div> : <div className="flex"><SiGooglegemini className="text-2xl mr-2" /> AI Search</div>}
                     </button>
                      <div className="h-10 w-10 mx-2">
                         <img src={user.photoURL} atl="usericon"/>
@@ -86,7 +88,7 @@ const Header =  ()=>{
                    </div>
                )}
         </div>
-    )
+    );
 };
 
 export default Header;

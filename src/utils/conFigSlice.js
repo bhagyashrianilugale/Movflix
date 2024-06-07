@@ -1,9 +1,10 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-const conFigSlice = createSlice({
+const conFigSlice = createSlice(
+    {
         name: "config",
         initialState : {
-            lang: "en"
+            lang: "English"
         },
 
         reducers: {
@@ -11,7 +12,8 @@ const conFigSlice = createSlice({
                 state.lang = action.payload
             }
         }
-});
+  }
+);
 
 export const { changeLanguage } = conFigSlice.actions;
 

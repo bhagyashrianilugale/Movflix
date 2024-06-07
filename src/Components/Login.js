@@ -57,7 +57,6 @@ const Login = ()=>{
                         );
                        
                         setSuccessMessage(`Welcome! ${username.current.value}`);
-                        Event.stopPropagation();
                       
                       }).catch((error) => {
                         // An error occurred
@@ -87,18 +86,17 @@ const Login = ()=>{
                 });
 
         }
-
-    }
+    };
 
     return(
-    <div>
+       <div>
             <Header/>
             <div className="absolute">
                    <img src={BG_URL}
                   alt="background_img"/>
             </div>
 
-            <form onSubmit= { (e)=> e.preventDefault() }className="w-3/12 absolute p-12
+            <form onSubmit= {(e)=> e.preventDefault()}className="w-3/12 absolute p-12
                           bg-black my-[10%] mx-auto right-0 left-0
                           text-white rounded-xl bg-opacity-80
                            cursor-pointer">
@@ -139,8 +137,8 @@ const Login = ()=>{
                 <p className="font-light text-xs">This page is protected by Google reCAPTCHA to<br/> 
                 ensure you're not a bot. <span className="font-bold">Learn more.</span></p>
             </form>
-    </div>
-    )
+       </div>
+    );
 };
 
 export default Login;
