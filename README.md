@@ -11,11 +11,10 @@ Netflix Gemini is a React web application leveraging the Gemini and TMDB APIs to
 ## Setup
 1. Clone the repository:
    ```sh
-   git clone https://github.com/your-username/netflix-gemini.git
-
+   git clone https://github.com/bhagyashrianilugale/Netflix-Gemini.git
 2. Navigate to the project directory and install dependencies:
    ```sh
-   cd netflix-gemini
+   cd netflix_app
    npm install
    
 3. Configure Firebase and APIs:
