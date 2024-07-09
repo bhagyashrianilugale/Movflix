@@ -1,23 +1,28 @@
 import MovieCard from "./MovieCard";
 
 const MovieList = ({Title, movies}) => {
-  
+  console.log(movies);
   return (
-   <div className="my-10"> 
+      <>
+       <div className="mt-10 pb-10"> 
         <h1 className="text-2xl font-semibold pl-4 text-white opacity-90">{Title}</h1>
          <div className="flex overflow-x-scroll no-scrollbar">
           <div className="flex">
-            {movies?.map((movie)=> <MovieCard key = { movie.id }   
-                                              posterId = { movie.id }
-                                              posterPath = { movie.poster_path } 
-                                              title = { movie.title } 
-                                              voteCount = { movie.vote_count } 
-                                              voteAverage = { movie.vote_average }
-                                              releaseDate = { movie.release_date }
+            {movies?.map((movie)=> <MovieCard key = { movie.id }
+                                              cardInfo = {{ posterId: movie.id, 
+                                                             language: movie.original_language, 
+                                                             posterPath: movie.poster_path,  
+                                                             title: movie.original_title, 
+                                                             voteCount: movie.vote_count, 
+                                                             releaseDate: movie.release_date, 
+                                                             overview : movie.overview,
+                                                             popularity: movie.popularity}} 
+                                              
                 />)}
-          </div>
-      </div>
-  </div>
+           </div>
+         </div>
+       </div>
+     </>
   );
 };
 

@@ -29,7 +29,7 @@ const GptSearchBar = () => {
 
     // Make API call to Gemini API call and get Movie results
     if(!searchText.current.value){ searchText.current.value = "Funny indian retro movies" }
-     const query = "Act as a movie Recommendation system and suggest some movies for the query:" +
+     const query = "Act as a movie Recommendation system and suggest some latest movies for the query:" +
                         searchText.current.value +
                     "only give me names of five movies comma seperated like the example result given ahead Example Result: Gadar, Sholay, Don, GOlmal, Koi Mil gaya";
      const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash"});
@@ -53,6 +53,7 @@ const GptSearchBar = () => {
   }
 
   return (
+    <>
     <div className="pt-[10%]">
          <form className="grid grid-cols-12 mx-[20%] bg-black rounded-lg" onSubmit={(e)=> e.preventDefault()}>
             <input type="text" 
@@ -64,6 +65,7 @@ const GptSearchBar = () => {
             </button>
         </form>
     </div>
+   </>
   );
 };
 

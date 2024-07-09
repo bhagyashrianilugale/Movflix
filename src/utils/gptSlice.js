@@ -17,7 +17,8 @@ const gptSlice = createSlice({
         toggleLoading : (state)=>{
              state.showLoading = !state.showLoading;
         },
-       addGptSearch : (state, action)=>{
+        
+        addGptSearch : (state, action)=>{
             const { moviesSearch, moviesResults, loadingState } = action.payload;
             state.moviesSearch = moviesSearch;
             state.moviesResults = moviesResults;

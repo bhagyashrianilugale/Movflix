@@ -12,17 +12,17 @@ const GptMovieSuggestions = () => {
   );
   if(!moviesSearch) return null;
   return (
-    <div>
-    <div className="px-6 py-4 m-20 bg-black/80">
+    <>
+       <div className="px-6 py-4 m-20 bg-black/80">
           <div>{moviesSearch?.map((movieName, index)=>(
-              <MovieList 
+                <MovieList 
                  key={movieName} 
                  Title={movieName} 
                  movies={moviesResults[index]}/>
             ))}
          </div>
-     </div>
-    </div>
+       </div>
+    </>
   );
 };
 

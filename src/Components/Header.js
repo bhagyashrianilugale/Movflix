@@ -1,9 +1,7 @@
-import { signOut } from "firebase/auth";
+import { signOut, onAuthStateChanged } from "firebase/auth";
 import { auth } from "../utils/firebase";
-import { useSelector,useDispatch } from "react-redux";
-import { addUser } from "../utils/userSlice";
-import { removeUser } from "../utils/userSlice";
-import { onAuthStateChanged } from "firebase/auth";
+import { useSelector, useDispatch } from "react-redux";
+import { addUser, removeUser } from "../utils/userSlice";
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { LOGO_URL } from "../utils/Constants";
@@ -28,6 +26,7 @@ const Header =  ()=>{
         });
         
     };
+
     useEffect(()=>{
         const unSubscribe = onAuthStateChanged(auth, (user) => {
           if (user) {
@@ -38,7 +37,7 @@ const Header =  ()=>{
                const photoURL = user.photoURL;
                dispatch(addUser(
                    {
-                    uid:uid, 
+                    uid: uid, 
                     email: email, 
                     displayName: displayName, 
                     photoURL: photoURL
@@ -67,16 +66,17 @@ const Header =  ()=>{
     }
 
     return(
-        <div className="z-10 p-2 w-screen absolute bg-gradient-to-b from-black flex justify-between">
+        <>
+          <div className="z-10 p-2 w-screen absolute bg-gradient-to-b from-black flex justify-between">
               <img  className=" w-60 px-10 mx-10 " src={LOGO_URL} alt="logo_img"/>
-               {user && (
+               { user && (
                     <div className="flex p-4">
-                        {showGptSearch && (
-                            <select className="mx-2 px-2 bg-gray-950 text-white" onChange={handleLangChange}>
-                            {SUPPORTED_LANG.map((lang)=> <option key={lang.identifier}>{lang.name}</option>)}
-                        </select>
+                        { showGptSearch && (
+                            <select className="mx-2 px-2 bg-gray-950 text-white" onChange = { handleLangChange }>
+                                   {SUPPORTED_LANG.map((lang)=> <option key={lang.identifier}>{lang.name}</option>)}
+                            </select>
                         )}
-                    <button className="py-2 px-2 bg-red-800 rounded-lg text-white" onClick={handleGptSearchClick}>
+                    <button className="py-2 px-2 bg-red-800 rounded-lg text-white" onClick = { handleGptSearchClick }>
                          { showGptSearch ?   <div className="flex"><IoMdHome className="text-2xl mr-2"/>  Page</div> : <div className="flex"><SiGooglegemini className="text-2xl mr-2" /> AI Search</div>}
                     </button>
                      <div className="h-10 w-10 mx-2">
@@ -84,10 +84,12 @@ const Header =  ()=>{
                     </div>
                     <div>
                         <button className="font-bold text-white" 
-                        onClick={handleBtnClick}><FaArrowRightFromBracket  className="text-rose-600 text-4xl mx-4"/></button></div>
+                             onClick={ handleBtnClick }><FaArrowRightFromBracket  className="text-rose-600 text-4xl mx-4"/>
+                        </button></div>
                    </div>
                )}
-        </div>
+          </div>
+        </>
     );
 };
 

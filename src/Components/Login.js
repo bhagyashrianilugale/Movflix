@@ -8,6 +8,7 @@ import { updateProfile } from "firebase/auth";
 import { useDispatch } from "react-redux";
 import { addUser } from "../utils/userSlice";
 import { BG_URL, USER_AVATAR } from "../utils/Constants"; 
+import Footer from "./Footer";
 
 const Login = ()=>{
     
@@ -89,13 +90,13 @@ const Login = ()=>{
     };
 
     return(
-       <div>
+       <>
             <Header/>
             <div className="absolute">
                    <img src={BG_URL}
                   alt="background_img"/>
+                  <Footer/>
             </div>
-
             <form onSubmit= {(e)=> e.preventDefault()}className="w-3/12 absolute p-12
                           bg-black my-[10%] mx-auto right-0 left-0
                           text-white rounded-xl bg-opacity-80
@@ -137,7 +138,7 @@ const Login = ()=>{
                 <p className="font-light text-xs">This page is protected by Google reCAPTCHA to<br/> 
                 ensure you're not a bot. <span className="font-bold">Learn more.</span></p>
             </form>
-       </div>
+        </>
     );
 };
 

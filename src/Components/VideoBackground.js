@@ -1,17 +1,17 @@
-import useTrailerVideos from "../utils/useTrailerVideos";
+import useTrailerVideos from "../hooks/useTrailerVideos";
 
 const VideoBackground = ({movieId})=>{
-    console.log(movieId);
    // Fetch data from TMDB  Video API and update appstore accordingly
    const trailerVideo = useTrailerVideos(movieId);
 
    return(
       // You tube snippet to show background video
-        <div className="w-screen">
+      <>
+        <div className="w-full h-full">
          <div>
             <iframe 
-             className="w-screen aspect-video h-[100%]"
-                    src={"https://www.youtube.com/embed/XeDbyVODQ5M?si=" + trailerVideo?.key + "&controls=0&autoplay=1&mute=1&XeDbyVODQ5Mloop=1&modestbranding=1&rel=0"}
+             className="w-full aspect-video h-full overflow-hidden"
+                    src={"https://www.youtube.com/embed/XeDbyVODQ5M?si=" + trailerVideo?.key + "&controls=0&autoplay=1&mute=1&XeDbyVODQ5M?loop=1&modestbranding=1&rel=0"}
                     title="YouTube video player"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
                     referrerPolicy="strict-origin-when-cross-origin" 
@@ -20,6 +20,7 @@ const VideoBackground = ({movieId})=>{
              </iframe>
             </div>
         </div>
+      </>
      );
 };
 
