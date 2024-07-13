@@ -5,23 +5,24 @@ Movflix is a lightweight, customizable, and efficient tool for exploring and ana
 ## Getting Started
 To get started with Movflix, follow these steps:
 
-## Clone the Repository:
-Navigate to the Project Directory: 
-cd Movflix_app
-Install Dependencies: 
-npm install
-Run the Application:
-npm start
-Open Your Browser: Visit http://localhost:3000 to access the application.
-Contributing
+1. Clone the Repository:
+   `https://github.com/bhagyashrianilugale/Movflix.git`
+2. Navigate to the Project Directory: 
+   `cd Movflix_app`
+3. Install Dependencies: 
+    `npm install`
+4. Run the Application:
+    `npm start`
+5. Open Your Browser: Visit `http://localhost:3000` to access the application.
+## Contributing
 Contributions are welcome! If you'd like to contribute to Movflix, please follow these guidelines:
+- Fork the repository.
+- Create your feature branch: `git checkout -b feature-name`.
+- Commit your changes: `git commit -m 'Add some feature' `.
+- Push to the branch: `git push origin feature-name`.
+- Submit a pull request.
 
-## Fork the repository.
-Create your feature branch: git checkout -b feature-name.
-Commit your changes: git commit -m 'Add some feature'.
-Push to the branch: git push origin feature-name.
-Submit a pull request.
-Credits
+## Credits
 Movflix was developed by bhagyashrianilugale.
 
 ## Creating a Movflix project involves following steps:
@@ -59,6 +60,7 @@ Movflix was developed by bhagyashrianilugale.
 - Update Store with new movies Data
 - Create Secondary container
 - Add some styles
-Author
+  
+## Author
 Bhagyashri Ugale
 Email: bhagyashriugale6970@gmail.com
