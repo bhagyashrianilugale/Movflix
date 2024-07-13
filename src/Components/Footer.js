@@ -25,7 +25,7 @@ const Footer = () => {
           <p className="underline my-2 hover:opacity-60">Account</p>
           <p className="underline my-2 hover:opacity-60">Ways to watch</p>
           <p className="underline my-2 hover:opacity-60">Corporate Information</p>
-          <p className="underline my-2 hover:opacity-60">Only on Netflix</p>
+          <p className="underline my-2 hover:opacity-60">Only on Movflix</p>
         </div>
         <div> 
           <p className="underline my-2 hover:opacity-60">Media Centre</p>
@@ -34,7 +34,7 @@ const Footer = () => {
           <p className="underline my-2 hover:opacity-60"><a href="bhagyashriugale6970@gmail.com">bhagyashriugale6970@gmail.com</a></p>
         </div>
        </div>
-        <p className="mx-20 my-6">Netflix India</p>
+        <p className="mx-20 my-6">Movflix India</p>
      </div>
     </>
   );

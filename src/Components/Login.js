@@ -133,7 +133,7 @@ const Login = ()=>{
                 <button className="p-1 my-2 bg-red-700 w-full  rounded-lg" onClick={handleBtnClick}>{isSignIn ? "Sign In" : "Sign Up"}</button>
 
                 <p className="font-semibold" onClick={toggleForm}>
-                    {isSignIn ? "New to Netflix? Sign Up Now" : "Already registered? Sign In now"}
+                    {isSignIn ? "New to Movflix? Sign Up Now" : "Already registered? Sign In now"}
                 </p>
                 <p className="font-light text-xs">This page is protected by Google reCAPTCHA to<br/> 
                 ensure you're not a bot. <span className="font-bold">Learn more.</span></p>

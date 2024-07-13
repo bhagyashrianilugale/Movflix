@@ -68,7 +68,7 @@ const Header =  ()=>{
     return(
         <>
           <div className="z-10 p-2 w-screen absolute bg-gradient-to-b from-black flex justify-between">
-              <img  className=" w-60 px-10 mx-10 " src={LOGO_URL} alt="logo_img"/>
+               <h1 className="w-60  px-10 mx-10 text-4xl font-bold text-red-600" >MOVFLIX</h1>
                { user && (
                     <div className="flex p-4">
                         { showGptSearch && (
