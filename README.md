@@ -6,14 +6,16 @@ Movflix is a lightweight, customizable, and efficient tool for exploring and ana
 To get started with Movflix, follow these steps:
 
 1. Clone the Repository:
-   [`https://github.com/bhagyashrianilugale/Movflix.git`]
-2. Navigate to the Project Directory: 
+   ``` javascript
+          https://github.com/bhagyashrianilugale/Movflix.git
+   ```
+3. Navigate to the Project Directory: 
    `cd Movflix_app`
-3. Install Dependencies: 
+4. Install Dependencies: 
     `npm install`
-4. Run the Application:
+5. Run the Application:
     `npm start`
-5. Open Your Browser: Visit `http://localhost:3000` to access the application.
+6. Open Your Browser: Visit `http://localhost:3000` to access the application.
 ## Contributing
 Contributions are welcome! If you'd like to contribute to Movflix, please follow these guidelines:
 - Fork the repository.
