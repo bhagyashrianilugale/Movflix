@@ -6,7 +6,7 @@ Movflix is a lightweight, customizable, and efficient tool for exploring and ana
 To get started with Movflix, follow these steps:
 
 1. Clone the Repository:
-   `https://github.com/bhagyashrianilugale/Movflix.git`
+   [`https://github.com/bhagyashrianilugale/Movflix.git`]
 2. Navigate to the Project Directory: 
    `cd Movflix_app`
 3. Install Dependencies: 
