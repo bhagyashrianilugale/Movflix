@@ -26,9 +26,8 @@ To get started with Movflix, follow these steps:
        npm start
    ```
 9. Open Your Browser: Visit
-    ```javasript
-        `http://localhost:3000` to access the application
-    ```
+    `http://localhost:3000` to access the application
+   
 ## Contributing
 Contributions are welcome! If you'd like to contribute to Movflix, please follow these guidelines:
 - Fork the repository.
