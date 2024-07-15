@@ -8,7 +8,7 @@ To get started with Movflix, follow these steps:
 1. Clone the Repository:
    
    ``` javascript
-          https://github.com/bhagyashrianilugale/Movflix.git
+       git clone https://github.com/bhagyashrianilugale/Movflix.git
    ```
 3. Navigate to the Project Directory:
    
