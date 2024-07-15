@@ -1,5 +1,6 @@
 {
   "hosting": {
+    "site": "movflixuba",
     "public": "build",
     "ignore": [
       "firebase.json",

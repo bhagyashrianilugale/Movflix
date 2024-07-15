@@ -1,5 +1,7 @@
 import React from "react";
 import { RxCrossCircled } from "react-icons/rx";
+
+
 const checkValidData = ( email, password, confirm_password )=>{
     
   const isValidEmail = /^[A-Za-z0-9._%-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,4}$/.test(email);

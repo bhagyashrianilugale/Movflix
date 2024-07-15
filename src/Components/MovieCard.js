@@ -48,30 +48,37 @@ const MovieCard = ({ cardInfo }) => {
                 </div>
             </article>
             {isOpen &&
-                <Dialog isOpen={ isOpen } setOpen={ setIsOpen } className="w-[60%] h-[70%] rounded-xl text-white bg-black border-2 fixed border-white overflow-y-scroll no-scrollbar">
+                <Dialog isOpen={ isOpen } setOpen={ setIsOpen } className="w-[54%] h-[65%] rounded-xl text-white bg-black border-2 fixed border-white overflow-y-scroll no-scrollbar">
                     <header>
-                        <RxCross2 className="text-2xl m-1 font-extrabold" onClick={ handleFirstClick } />
-                        <p className="font-bold py-2 text-2xl mx-14 my-2 inline-flex">{title}</p>
+                        <RxCross2 className="text-4xl mx-5 my-1 font-extrabold mt-2" onClick={ handleFirstClick } />
+                        <p className="font-bold py-2 text-2xl mx-14 inline-flex">{title}</p>
                     </header>
                     <section className="flex">
                         <div className="w-1/3">
-                            <img className="h-34 w-36 mx-auto rounded-lg" id={posterId} src={IMG_CDN_URL + posterPath} alt="movie_card_img" />
-                            <button className="bg-white text-black mx-20 px-4 text-lg mt-2 border-double border-black border-4 rounded-lg hover:bg-opacity-80" onClick={handleSecondClick}>
-                                <AiFillCaretRight className="inline text-lg font-bold" />Play
+                            <img className="h-[80%] w-[60%] mx-auto rounded-lg" 
+                                  id={ posterId } src={ IMG_CDN_URL + posterPath } alt="movie_card_img" />
+                            <button className="bg-white text-black mx-20 px-2 mt-4 border-double
+                                     border-black border-4 rounded-lg hover:bg-opacity-80 text-2xl" onClick={handleSecondClick}>
+                                <AiFillCaretRight className="inline text-3xl font-bold" />Play
                             </button>
                         </div>
-                        <div className="w-2/3 pr-6 opacity-80 text-sm">
-                            <p className="py-1"><b>Language:</b> {language}</p>
-                            <p className="py-1"><b>Votes:</b> {voteCount.toLocaleString()}<FaThumbsUp className="inline text-xl mx-2 mb-2 text-red-600" /></p>
-                            <p className="py-1"><b>Popularity:</b> {popularity}<AiFillFire className="inline text-xl mx-2 mb-2 text-orange-600" /></p>
-                            <p className="py-1"><b>Release Date:</b> {releaseDate}</p>
-                            {overview && <p className="py-1"><b>Overview:</b> {overview}</p>}
+                        <div className="w-2/3 pr-6 opacity-80 text-lg">
+                             <b>Language:</b><span> &nbsp;{language}</span><br/>
+                            <b>Votes:</b><span>&nbsp;{voteCount.toLocaleString()}
+                                 <FaThumbsUp className="inline text-xl mx-2 mb-2 text-red-600" />
+                            </span><br/>
+                            <b>Popularity:</b><span>&nbsp;{popularity}
+                                 <AiFillFire className="inline text-xl mx-2 mb-2 text-orange-600" />
+                            </span><br/>
+                            <b>Release Date:</b><span>&nbsp;{releaseDate}</span>
+                            {overview && <p className="py-1"><b>Overview: </b> {overview}</p>}
                         </div>
                     </section>
                 </Dialog>
             }
             {isOpentwo &&
-                <Dialog isOpen={ isOpentwo } setOpen={ setIsOpentwo } className="w-[60%] h-[80%] rounded-xl flex bg-black border-2 border-white overflow-hidden">
+                <Dialog isOpen={ isOpentwo } setOpen={ setIsOpentwo } 
+                        className="rounded-xl w-[54%] h-[65%] flex bg-black border-2 border-white overflow-hidden">
                     <div>
                         <YouTube videoId={ cardTrailerVideo?.key }
                             opts={ youTubeOpts }

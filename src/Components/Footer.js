@@ -6,7 +6,7 @@ const Footer = () => {
   }
   return (
     <>
-    <div className="w-screen h-[40%] bg-black text-white text-sm py-20 cursor-pointer">
+    <div className="w-screen h-[40%] bg-black text-white text-lg py-20 cursor-pointer">
       <p className="mx-20 my-6">Questions? Call 000-800-919-1694</p>
       <div className="flex justify-around">
         <div> 
