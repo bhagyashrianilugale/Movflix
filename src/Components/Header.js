@@ -68,7 +68,7 @@ const Header =  ()=>{
     return(
         <>
           <div className="z-10 p-2 w-screen absolute bg-gradient-to-b from-black flex justify-between">
-               <h1 className="w-60 px-10 my-auto text-4xl font-bold text-red-600" >MOVFLIX</h1>
+               <h1 className="w-60 px-10 my-auto text-5xl font-bold text-red-600" >MOVFLIX</h1>
                { user && (
                     <div className="flex p-4">
                         { showGptSearch && (
@@ -77,8 +77,14 @@ const Header =  ()=>{
                             </select>
                         )}
                     <button className="px-3 mx-4 py-3 my-auto bg-red-800 rounded-lg text-white" onClick = { handleGptSearchClick }>
-                         { showGptSearch ?  <div className="flex"><IoMdHome className="text-2xl mr-2"/> Page</div>
-                                         : <div className="flex"><SiGooglegemini className="text-2xl mr-2" /> AI Search</div>}
+                         { showGptSearch ? <div className="flex font-semibold">
+                                            <IoMdHome className="text-3xl mr-2"/>
+                                                <span className="text-xl">Page</span>
+                                           </div>
+                                         : <div className="flex font-semibold">
+                                            <SiGooglegemini className="mr-2 text-2xl" />
+                                            <span className="text-xl">AI Search</span>
+                                    </div>}
                     </button>
                      <div className="h-10 w-10 mx-2 my-auto">
                         <img src={user.photoURL} atl="usericon"/>

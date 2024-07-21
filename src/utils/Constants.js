@@ -60,7 +60,7 @@ export const youTubeOpts = {
   mute: 0,              // Do not mute the video
   start: 0,             // Start the video at 0 seconds
   end: 0, 
-  rel: 0,              // End the video at the video's end
+  rel: 1,              // End the video at the video's end
   playsinline: 1,       // Play inline on iOS
   cc_load_policy: 1,    // Do not show closed captions by default
   iv_load_policy: 3,    // Hide video annotations

@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useRef } from 'react';
 import lang from '../utils/languageConstant';
 import { useDispatch, useSelector } from 'react-redux';
 import genAI from '../utils/gemini';
@@ -31,7 +31,7 @@ const GptSearchBar = () => {
     if(!searchText.current.value){ searchText.current.value = "Funny indian retro movies" }
      const query = "Act as a movie Recommendation system and suggest some latest movies for the query:" +
                         searchText.current.value +
-                    "only give me names of five movies comma seperated like the example result given ahead Example Result: Gadar, Sholay, Don, GOlmal, Koi Mil gaya";
+                    "only give me names of five movies comma seperated like the example result given ahead Example Result: Gadar, Sholay, Don, Golmal, Koi Mil gaya";
      const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash"});
      const prompt = query;
      const result = await model.generateContent(prompt);

@@ -14,7 +14,7 @@ const GptMovieSuggestions = () => {
   return (
     <>
        <div className="px-6 py-4 m-20 bg-black/80">
-          <div>{moviesSearch?.map((movieName, index)=>(
+          <div>{ moviesSearch?.map((movieName, index)=>(
                 <MovieList 
                  key={movieName} 
                  Title={movieName} 

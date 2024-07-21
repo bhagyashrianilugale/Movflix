@@ -21,8 +21,8 @@ const MovieCard = ({ cardInfo }) => {
 
     // Fetch cardTrailer
     useCardTrailerVideo(trailerVideoId);
-
     const { posterPath, title, voteCount, releaseDate, posterId, language, overview, popularity } = cardInfo;
+    
 
     const onError = (event) => {
           console.error('Error occurred:', event.data);
@@ -43,19 +43,23 @@ const MovieCard = ({ cardInfo }) => {
     return (
         <>
             <article>
-                <div className="w-52 px-2 my-4 mx-2 bg-black cursor-pointer transition-all duration-900 hover:scale-110">
+                <div className="w-52 px-2 my-4 mx-2 bg-black text-white cursor-pointer transition-all duration-900 hover:scale-110">
                     <img className="h-38 w-42" src={IMG_CDN_URL + posterPath} alt="movie_card_img" id={posterId} onClick={ handleFirstClick } />
+                    <p className="truncate text-lg font-bold opacity-80">{title}</p>
+                    <p className="text-sm font-semibold">{releaseDate}</p>
                 </div>
             </article>
             {isOpen &&
-                <Dialog isOpen={ isOpen } setOpen={ setIsOpen } className="w-[54%] h-[65%] rounded-xl text-white bg-black border-2 fixed border-white overflow-y-scroll no-scrollbar">
+                <Dialog isOpen={ isOpen } setOpen={ setIsOpen } 
+                     className="w-[54%] h-[65%] rounded-xl text-white bg-black border-2 
+                                fixed border-white overflow-y-scroll no-scrollbar">
                     <header>
                         <RxCross2 className="text-4xl mx-5 my-1 font-extrabold mt-2" onClick={ handleFirstClick } />
                         <p className="font-bold py-2 text-2xl mx-14 inline-flex">{title}</p>
                     </header>
                     <section className="flex">
                         <div className="w-1/3">
-                            <img className="h-[80%] w-[60%] mx-auto rounded-lg" 
+                            <img className="h-[90%] w-[70%] mx-auto rounded-lg" 
                                   id={ posterId } src={ IMG_CDN_URL + posterPath } alt="movie_card_img" />
                             <button className="bg-white text-black mx-20 px-2 mt-4 border-double
                                      border-black border-4 rounded-lg hover:bg-opacity-80 text-2xl" onClick={handleSecondClick}>
@@ -80,7 +84,9 @@ const MovieCard = ({ cardInfo }) => {
                 <Dialog isOpen={ isOpentwo } setOpen={ setIsOpentwo } 
                         className="rounded-xl w-[54%] h-[65%] flex bg-black border-2 border-white overflow-hidden">
                     <div>
-                        <YouTube videoId={ cardTrailerVideo?.key }
+                        <div className="bg-black w-full h-[12%] absolute"></div>
+                        <div className="bg-black w-full h-[15%] mt-[53%] absolute"></div>
+                           <YouTube videoId={ cardTrailerVideo?.key }
                             opts={ youTubeOpts }
                             onError={ onError }
                             className="mx-auto" />
