@@ -45,8 +45,8 @@ const MovieCard = ({ cardInfo }) => {
             <article>
                 <div className="w-52 px-2 my-4 mx-2 bg-black text-white cursor-pointer transition-all duration-900 hover:scale-110">
                     <img className="h-38 w-42" src={IMG_CDN_URL + posterPath} alt="movie_card_img" id={posterId} onClick={ handleFirstClick } />
-                    <p className="truncate text-lg font-bold opacity-80">{title}</p>
-                    <p className="text-sm font-semibold">{releaseDate}</p>
+                    <p className="truncate text-sm font-bold opacity-80">{title}</p>
+                    <p className="text-xs font-semibold">{releaseDate}</p>
                 </div>
             </article>
             {isOpen &&
@@ -85,11 +85,11 @@ const MovieCard = ({ cardInfo }) => {
                         className="rounded-xl w-[54%] h-[65%] flex bg-black border-2 border-white overflow-hidden">
                     <div>
                         <div className="bg-black w-full h-[12%] absolute"></div>
-                        <div className="bg-black w-full h-[15%] mt-[53%] absolute"></div>
+                        <div className="bg-black w-full h-[24%] mt-[46%] absolute"></div>
                            <YouTube videoId={ cardTrailerVideo?.key }
                             opts={ youTubeOpts }
                             onError={ onError }
-                            className="mx-auto" />
+                            className="mx-[8%]" />
                     </div>
                 </Dialog>}
             {error && <Error />}
