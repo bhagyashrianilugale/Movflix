@@ -85,11 +85,11 @@ const MovieCard = ({ cardInfo }) => {
                         className="rounded-xl w-[54%] h-[65%] flex bg-black border-2 border-white overflow-hidden">
                     <div>
                         <div className="bg-black w-full h-[12%] absolute"></div>
-                        <div className="bg-black w-full h-[24%] mt-[46%] absolute"></div>
+                        <div className="bg-black w-full h-[16%] mt-[54%] absolute"></div>
                            <YouTube videoId={ cardTrailerVideo?.key }
                             opts={ youTubeOpts }
                             onError={ onError }
-                            className="mx-[8%]" />
+                            className="" />
                     </div>
                 </Dialog>}
             {error && <Error />}
