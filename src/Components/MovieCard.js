@@ -62,7 +62,7 @@ const MovieCard = ({ cardInfo }) => {
                             <img className="h-[80%] w-[60%] mx-auto rounded-lg" 
                                   id={ posterId } src={ IMG_CDN_URL + posterPath } alt="movie_card_img" />
                             <button className="bg-white text-black mx-16 px-2 mt-4 border-double
-                                     border-black border-2 rounded-lg hover:bg-opacity-80 text-xl" onClick={handleSecondClick}>
+                                     border-black border-2 rounded-lg hover:bg-opacity-80 text-xl" onClick={ handleSecondClick }>
                                 <AiFillCaretRight className="inline text-xl font-bold" />Play
                             </button>
                         </div>
