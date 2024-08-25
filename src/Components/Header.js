@@ -4,7 +4,6 @@ import { useSelector, useDispatch } from "react-redux";
 import { addUser, removeUser } from "../utils/userSlice";
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import { LOGO_URL } from "../utils/Constants";
 import { FaArrowRightFromBracket } from "react-icons/fa6";
 import { toggleGptSearchView } from "../utils/gptSlice";
 import { SUPPORTED_LANG } from "../utils/Constants";
@@ -67,23 +66,23 @@ const Header =  ()=>{
 
     return(
         <>
-          <div className="z-10 p-2 w-screen absolute bg-gradient-to-b from-black flex justify-between">
-               <h1 className="w-60 px-10 my-auto text-4xl font-bold text-red-600" >MOVFLIX</h1>
+          <div className="z-10 p-1 w-screen absolute bg-gradient-to-b from-black flex justify-between">
+               <h1 className="w-30 px-10 my-auto text-3xl font-bold text-red-600" >MOVFLIX</h1>
                { user && (
                     <div className="flex p-4">
                         { showGptSearch && (
-                            <select className="mx-1 py-2 my-auto bg-gray-950 text-white" onChange = { handleLangChange }>
+                            <select className="mx-1 py-1 my-auto bg-gray-950 text-white" onChange = { handleLangChange }>
                                    {SUPPORTED_LANG.map((lang)=> <option key={lang.identifier}>{lang.name}</option>)}
                             </select>
                         )}
                     <button className=" py-1 px-2 my-auto bg-red-800 rounded-lg text-white" onClick = { handleGptSearchClick }>
-                         { showGptSearch ? <div className="flex font-semibold">
-                                            <IoMdHome className="text-2xl mr-2"/>
-                                                <span className="text-xl">Page</span>
+                         { showGptSearch ? <div className="flex font-semibold p-1">
+                                            <IoMdHome className="text-xl mx-1 mr-2"/>
+                                                <span className="text-sm">Page</span>
                                            </div>
-                                         : <div className="flex font-semibold">
-                                            <SiGooglegemini className="mx-0 my-1 text-2xl" />
-                                            <span className="text-lg">AI Search</span>
+                                         : <div className="flex font-semibold p-1">
+                                            <SiGooglegemini className="mx-1 text-xl" />
+                                            <span className="text-sm">AI Search</span>
                                     </div>}
                     </button>
                      <div className="h-10 w-10 mx-2 my-auto">
