@@ -14,3 +14,13 @@
           scrollbar-width: none;  
   }
 }
+
+.enhanced-image{
+  filter: 
+    contrast(120%)     /* Increase contrast */
+    brightness(110%)   /* Adjust brightness */
+    saturate(100%)     /* Increase saturation */
+    hue-rotate(4deg)   /* Slight hue adjustment */
+    blur(0.2px);       /* Light blur for smoothing */
+
+}

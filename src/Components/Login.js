@@ -93,11 +93,12 @@ const Login = ()=>{
         <>
             <Header/>
             <div className="absolute">
-                   <img src={BG_URL}
-                  alt="background_img"/>
+                 <img src={BG_URL}
+                  alt="background_img"
+                  className="enhanced-image"/>
                   <img src={BG_URL}
                   alt="background_img" 
-                  className="block lg:hidden h-full"/>
+                  className="block lg:hidden h-full enhanced-image"/>
                   <Footer/>
             </div>
             <form onSubmit= {(e)=> e.preventDefault()}className="w-3/4 md:w-5/12 md:py-12 lg:w-3/12 p-6 absolute lg:p-12

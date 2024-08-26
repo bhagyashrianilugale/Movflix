@@ -75,7 +75,7 @@ const Header =  ()=>{
                                    {SUPPORTED_LANG.map((lang)=> <option key={lang.identifier}>{lang.name}</option>)}
                             </select>
                         )}
-                    <button className=" py-1 px-2 my-auto bg-red-800 rounded-lg text-white" onClick = { handleGptSearchClick }>
+                    <button className=" py-1 px-2 my-auto bg-red-800 rounded-sm text-white" onClick = { handleGptSearchClick }>
                          { showGptSearch ? <div className="flex font-semibold p-1">
                                             <IoMdHome className="text-xl mx-1 mr-2"/>
                                                 <span className="text-sm">Page</span>
