@@ -67,7 +67,7 @@ const Header =  ()=>{
     return(
         <>
           <div className="z-10 p-1 w-screen absolute bg-gradient-to-b from-black flex justify-between">
-               <h1 className="w-30 px-10 my-auto text-3xl font-bold text-red-600" >MOVFLIX</h1>
+               <h1 className="w-30 px-10 my-auto text-3xl font-bold text-red-600 cursor-default" >MOVFLIX</h1>
                { user && (
                     <div className="flex p-4">
                         { showGptSearch && (

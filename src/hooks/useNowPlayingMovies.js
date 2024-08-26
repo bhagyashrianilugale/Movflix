@@ -10,9 +10,14 @@ const useNowPlayingMovies = ()=>{
 
     // Fetch data from Now playing Movies URL and update app store
     const getNowPlayingMovies = async ()=>{
-        const data =  await fetch('https://api.themoviedb.org/3/movie/now_playing', API_OPTIONS);
-        const json = await data?.json();
-        dispatch(addNowPlayingMovies(json?.results));
+        try{
+            const data =  await fetch('https://api.themoviedb.org/3/movie/now_playing', API_OPTIONS);
+            const json = await data?.json();
+            dispatch(addNowPlayingMovies(json?.results));
+        }catch(err){
+            console.log(err);
+        }
+        
     };
 
     useEffect(()=>{

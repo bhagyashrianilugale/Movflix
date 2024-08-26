@@ -10,9 +10,14 @@ const useTopRatedMovies = ()=>{
 
       // Fetch data from Top Rating Movies URL and update app store
     const getTopRatedMovies = async ()=>{
-        const data =  await fetch('https://api.themoviedb.org/3/movie/top_rated', API_OPTIONS);
-        const json =  await data.json();
-        dispatch(addTopRatedMovies(json?.results));
+        try{
+            const data =  await fetch('https://api.themoviedb.org/3/movie/top_rated', API_OPTIONS);
+            const json =  await data.json();
+            dispatch(addTopRatedMovies(json?.results));
+        }catch(err){
+            console.log(err);
+        }
+        
     };
 
     useEffect(()=>{

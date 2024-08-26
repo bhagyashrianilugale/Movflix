@@ -18,7 +18,7 @@ const MovieCard = ({ cardInfo }) => {
     const [isOpen, setIsOpen] = useState(false);
     const [isOpentwo, setIsOpentwo] = useState(false);
     const [error, setError] = useState(false);
-
+    
     // Fetch cardTrailer
     useCardTrailerVideo(trailerVideoId);
     const { posterPath, title, voteCount, releaseDate, posterId, language, overview, popularity } = cardInfo;
@@ -90,7 +90,7 @@ const MovieCard = ({ cardInfo }) => {
                       >
                     <div className="w-[48%] h-[60%]">
                          <div className="bg-black w-full h-[10%] absolute">
-                           <RxCross2 className="text-2xl mx-4 my-1 font-extrabold mt-2 text-white" onClick={ handleSecondClick } />
+                           <RxCross2 className="text-2xl mx-3 my-1 font-extrabold mt-2 text-white" onClick={ handleSecondClick } />
                         </div>
                         <div className="bg-black w-full h-[12%] mt-[50%] absolute"></div>
                            <YouTube videoId={ cardTrailerVideo?.key }

@@ -1,6 +1,10 @@
+import { useSelector } from "react-redux";
 import useTrailerVideos from "../hooks/useTrailerVideos";
 
 const VideoBackground = ({movieId})=>{
+
+   const TrailerVideo = useSelector((store) => store?.movies?.trailerVideos);
+
    // Fetch data from TMDB  Video API and update appstore accordingly
    const trailerVideo = useTrailerVideos(movieId);
    return(
@@ -10,15 +14,13 @@ const VideoBackground = ({movieId})=>{
          <div>
             <div className="w-full h-[12%] bg-black absolute"></div>
             <iframe 
-             className="w-full aspect-video h-full overflow-hidden"
-                    src={"https://www.youtube.com/embed/XeDbyVODQ5M?si=" + trailerVideo?.key + "&controls=0&autoplay=1&mute=1&XeDbyVODQ5M?loop=1&modestbranding=1&rel=0"}
-                    title="YouTube video player"
+                    className="w-full aspect-video h-full overflow-hidden" 
+                    src={"https://www.youtube.com/embed/"+ TrailerVideo?.key + "?si=&controls=0&hd=1&enablejsapi=1&showinfo=0&autoplay=1&mute=1&"+ TrailerVideo?.key +"?loop=1&modestbranding=1&rel=0"}
+                    title="Inside Out 2 | Announce Trailer"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-                    referrerPolicy="strict-origin-when-cross-origin" 
-                    allowFullScreen 
-                   >
-             </iframe>
-            </div>
+                    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+            </iframe>
+           </div>
         </div>
       </>
      );
