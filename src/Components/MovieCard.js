@@ -42,6 +42,8 @@ const MovieCard = ({ cardInfo }) => {
 
     return (
         <>
+            { isOpen || isOpentwo ? <div className='fixed inset-0 bg-black bg-opacity-80  backdrop-blur-xl z-40'></div>: null}
+
             <article>
                 <div className="w-44 my-4 mx-1 text-white cursor-pointer transition-all duration-900 hover:scale-110">
                     <img className="h-34 w-42" src={IMG_CDN_URL + posterPath} alt="movie_card_img" id={posterId} onClick={ handleFirstClick } />
