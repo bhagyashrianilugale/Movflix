@@ -1,12 +1,10 @@
 import React from 'react';
 
 const Footer = () => {
- const sendEmail = ()=>{
-    window.open("bhagyashriugale6970@gmail.com");
-  }
+ 
   return (
     <>
-    <footer className="w-screen  h-[20%] lg:h-[40%] bg-black px-2 text-white text-sm py-16 cursor-pointer">
+    <footer className="w-screen h-[20%] lg:h-[40%] bg-black px-2 text-white text-sm py-16 cursor-pointer">
     <div>
       <p className="mx-10 lg:mx-20 my-6">Questions? Call 000-800-919-1694</p>
       <div className="flex justify-evenly lg:flex lg:justify-around">

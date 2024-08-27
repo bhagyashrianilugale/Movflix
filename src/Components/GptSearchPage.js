@@ -2,7 +2,6 @@ import React from 'react'
 import GptSearchBar from './GptSearchBar';
 import GptMovieSuggestions from './GptMovieSuggestions';
 import { SEARCH_PAGE_BG_URL } from '../utils/Constants';
-import Footer from './Footer';
 
 
 const GptSearchPage = () => {
