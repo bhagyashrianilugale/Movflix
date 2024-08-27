@@ -20,7 +20,7 @@ const VideoBackground = ({movieId})=>{
                     frameborder="0" 
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
                     referrerpolicy="strict-origin-when-cross-origin" 
-                    allowfullscreen>
+                    allowFullScreen>
             </iframe>
            </div>
            <div className="w-full h-[18%] top-[20%] md:top-[20%] lg:top-[100%] bg-black absolute"></div>

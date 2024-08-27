@@ -69,7 +69,7 @@ const Header =  ()=>{
           <div className="z-10 lg:p-1 lg:mb-0 mb-10 w-screen absolute bg-gradient-to-b from-black flex justify-between">
                <h1 className="w-30 px-10 lg:my-auto lg:py-0 py-2 text-xl lg:text-3xl font-bold text-red-600 cursor-default" >MOVFLIX</h1>
                { user && (
-                    <div className="flex py-1 lg:p-4">
+                    <div className="flex py-1 lg:p-2">
                         { showGptSearch && (
                             <select className="mx-1 py-1 my-auto bg-gray-950 text-white" onChange = { handleLangChange }>
                                    {SUPPORTED_LANG.map((lang)=> <option key={lang.identifier}>{lang.name}</option>)}
@@ -77,11 +77,11 @@ const Header =  ()=>{
                         )}
                     <button className="lg:py-1 px-0 h-6 lg:h-10 lg:px-2 my-auto bg-red-800 rounded-sm text-white" onClick = { handleGptSearchClick }>
                          { showGptSearch ? <div className="flex font-semibold p-1">
-                                            <IoMdHome className="text-xl mx-1 mr-2"/>
-                                                <span className="text-sm">Page</span>
+                                            <IoMdHome className="text-sm lg:text-xl mx-1 mr-2"/>
+                                                <span className="text-xs pb-2 lg:text-sm">Page</span>
                                            </div>
                                          : <div className="flex font-semibold px-1 lg:p-1">
-                                            <SiGooglegemini className="lg:mx-1 lg:text-2xl pr-1" />
+                                            <SiGooglegemini className="lg:mx-1 text-xl lg:text-2xl pr-1" />
                                             <span className="text-xs lg:text-sm text-center">AI Search</span>
                                     </div>}
                     </button>
