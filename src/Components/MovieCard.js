@@ -54,22 +54,22 @@ const MovieCard = ({ cardInfo }) => {
             </article>
             {isOpen &&
                 <Dialog isOpen={ isOpen } setOpen={ setIsOpen } 
-                     className="w-full h-[40%] lg:w-[60%] lg:h-[70%] rounded-xl text-white bg-black border-2 
+                     className="w-full h-[60%] lg:w-[60%] lg:h-[70%] rounded-xl text-white bg-black border-2 
                                 fixed border-white overflow-y-scroll no-scrollbar">
                     <header>
-                        <RxCross2 className="text-2xl mx-5 my-2 font-extrabold mt-2" onClick={ handleFirstClick } />
-                        <p className="font-bold py-1 text-lg lg:text-xl mx-8 inline-flex">{title}</p>
+                        <RxCross2 className="lg:text-2xl text-xl mx-4 my-2 font-extrabold mt-2" onClick={ handleFirstClick } />
+                        <p className="font-bold py-1 text-lg lg:text-xl mx-2 inline-flex">{title}</p>
                     </header>
-                    <section className="flex">
+                    <section className="flex mx-2">
                         <div className="w-1/3">
-                            <img className="h-[80%] lg:w-[70%] w-[80%] my-4 mx-auto rounded-lg enhanced-image" 
+                            <img className="h-[70%] lg:w-[70%] w-[90%] my-4 mx-auto rounded-sm enhanced-image" 
                                   id={ posterId } src={ IMG_CDN_URL + posterPath } alt="movie_card_img" />
                             <button className="bg-white text-black mx-6 lg:mx-16 px-2 mt-4 border-double
-                                     border-black border-2 rounded-lg hover:bg-opacity-80 text-xl" onClick={ handleSecondClick }>
-                                <AiFillCaretRight className="inline text-lg font-bold" />Play
+                                     border-black border-2 rounded-lg hover:bg-opacity-80 text-sm" onClick={ handleSecondClick }>
+                                <AiFillCaretRight className="inline text-xl font-bold" />Play
                             </button>
                         </div>
-                        <div className="w-2/3 pr-6 opacity-80 text-sm">
+                        <div className="w-2/3 pr-6 p-2 opacity-80 text-sm">
                              <b>Language:</b><span>&nbsp;{language}</span><br/>
                              <b>Votes:</b><span>&nbsp;{voteCount.toLocaleString()}
                                  <FaThumbsUp className="inline text-lg mx-2 mb-2 text-red-600" />
