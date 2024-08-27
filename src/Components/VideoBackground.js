@@ -7,7 +7,6 @@ const VideoBackground = ({movieId})=>{
 
    // Fetch data from TMDB  Video API and update appstore accordingly
    const trailerVideo = useTrailerVideos(movieId);
-   console.log(trailerVideo);
    return(
       // You tube snippet to show background video
       <>
@@ -24,7 +23,8 @@ const VideoBackground = ({movieId})=>{
                     allowfullscreen>
             </iframe>
            </div>
-        </div>
+           <div className="w-full h-[18%] top-[20%] md:top-[20%] lg:top-[100%] bg-black absolute"></div>
+         </div>
       </>
      );
 };

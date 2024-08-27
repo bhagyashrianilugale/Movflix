@@ -46,7 +46,7 @@ const MovieCard = ({ cardInfo }) => {
 
             <article>
                 <div className="w-36 lg:w-44 my-4 mx-2 lg:mx-1 text-white cursor-pointer transition-transform duration-50 transform hover:scale-90">
-                    <img className="h-26 w-36 w-30 md:h-34 md:w-40 lg:h-34 lg:w-44 enhanced-image" 
+                    <img className="h-32 w-44 lg:h-26 md:h-34 md:w-40 lg:h-full lg:w-44 enhanced-image" 
                          src={IMG_CDN_URL + posterPath} alt="movie_card_img" id={posterId} onClick={ handleFirstClick } />
                     <p className="truncate text-sm font-semibol">{title}</p>
                     <p className="text-xs font-thin">{releaseDate}</p>
