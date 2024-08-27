@@ -15,6 +15,10 @@
   }
 }
 
+body{
+  overflow-x: hidden;
+}
+
 .enhanced-image{
   filter: 
     contrast(120%)     /* Increase contrast */

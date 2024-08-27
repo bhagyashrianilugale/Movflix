@@ -45,8 +45,8 @@ const MovieCard = ({ cardInfo }) => {
             { isOpen || isOpentwo ? <div className='fixed inset-0 bg-opacity-40  backdrop-blur-xl z-40'></div>: null}
 
             <article>
-                <div className="w-44 my-4 mx-1 text-white cursor-pointer transition-all duration-900 hover:scale-110">
-                    <img className="h-30 w-38 md:h-34 md:w-40 lg:h-34 lg:w-42 enhanced-image" 
+                <div className="w-44 my-4 lg:mx-1 text-white cursor-pointer transition-transform duration-50 transform hover:scale-90">
+                    <img className="h-26 w-36 md:h-34 md:w-40 lg:h-34 lg:w-44 enhanced-image" 
                          src={IMG_CDN_URL + posterPath} alt="movie_card_img" id={posterId} onClick={ handleFirstClick } />
                     <p className="truncate text-sm font-semibol">{title}</p>
                     <p className="text-xs font-thin">{releaseDate}</p>
