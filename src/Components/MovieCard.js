@@ -54,50 +54,48 @@ const MovieCard = ({ cardInfo }) => {
             </article>
             {isOpen &&
                 <Dialog isOpen={ isOpen } setOpen={ setIsOpen } 
-                     className="w-[60%] h-[70%] rounded-xl text-white bg-black border-2 
+                     className="w-full h-[40%] lg:w-[60%] lg:h-[70%] rounded-xl text-white bg-black border-2 
                                 fixed border-white overflow-y-scroll no-scrollbar">
                     <header>
                         <RxCross2 className="text-2xl mx-5 my-2 font-extrabold mt-2" onClick={ handleFirstClick } />
-                        <p className="font-bold py-1 text-xl mx-8 inline-flex">{title}</p>
+                        <p className="font-bold py-1 text-lg lg:text-xl mx-8 inline-flex">{title}</p>
                     </header>
                     <section className="flex">
                         <div className="w-1/3">
-                            <img className="h-[80%] w-[70%] mx-auto rounded-lg enhanced-image" 
+                            <img className="h-[80%] lg:w-[70%] w-[80%] my-4 mx-auto rounded-lg enhanced-image" 
                                   id={ posterId } src={ IMG_CDN_URL + posterPath } alt="movie_card_img" />
-                            <button className="bg-white text-black mx-16 px-2 mt-4 border-double
+                            <button className="bg-white text-black mx-6 lg:mx-16 px-2 mt-4 border-double
                                      border-black border-2 rounded-lg hover:bg-opacity-80 text-xl" onClick={ handleSecondClick }>
-                                <AiFillCaretRight className="inline text-xl font-bold" />Play
+                                <AiFillCaretRight className="inline text-lg font-bold" />Play
                             </button>
                         </div>
                         <div className="w-2/3 pr-6 opacity-80 text-sm">
-                             <b>Language:</b><span> &nbsp;{language}</span><br/>
-                            <b>Votes:</b><span>&nbsp;{voteCount.toLocaleString()}
+                             <b>Language:</b><span>&nbsp;{language}</span><br/>
+                             <b>Votes:</b><span>&nbsp;{voteCount.toLocaleString()}
                                  <FaThumbsUp className="inline text-lg mx-2 mb-2 text-red-600" />
                             </span><br/>
                             <b>Popularity:</b><span>&nbsp;{popularity}
                                  <AiFillFire className="inline text-lg mx-2 mb-2 text-orange-600" />
                             </span><br/>
                             <b>Release Date:</b><span>&nbsp;{releaseDate}</span>
-                            {overview && <p className="py-1"><b>Overview: </b> {overview}</p>}
+                            {overview && <p className="py-1 line-clamp-5"><b>Overview: </b> {overview}</p>}
                         </div>
                     </section>
                 </Dialog>
             }
             {isOpentwo &&
                 <Dialog isOpen={ isOpentwo } setOpen={ setIsOpentwo }
-                        className="w-[60%] h-[70%] rounded-xl text-white bg-black border-2 
+                        className="w-full h-[40%] lg:w-[60%] lg:h-[70%] rounded-xl text-white bg-black border-2 
                                 fixed border-white overflow-hidden"
                       >
-                    <div className="w-[48%] h-[60%]">
                          <div className="bg-black w-full h-[10%] absolute">
                            <RxCross2 className="text-2xl mx-3 my-1 font-extrabold mt-2 text-white" onClick={ handleSecondClick } />
                         </div>
-                        <div className="bg-black w-full h-[12%] mt-[50%] absolute"></div>
+                        <div className="bg-black w-full h-[10%] mt-[88%] lg:mt-[50%] absolute"></div>
                            <YouTube videoId={ cardTrailerVideo?.key }
                             opts={ youTubeOpts }
                             onError={ onError }
-                             />
-                    </div>
+                            />
                 </Dialog>}
             {error && <Error />}
         </>
