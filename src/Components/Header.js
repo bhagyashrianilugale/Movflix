@@ -72,7 +72,9 @@ const Header =  ()=>{
                     <div className="flex py-1 lg:p-2">
                         { showGptSearch && (
                             <select className="mx-1 py-1 my-auto bg-gray-950 text-white" onChange = { handleLangChange }>
-                                   {SUPPORTED_LANG.map((lang)=> <option key={lang.identifier}>{lang.name}</option>)}
+                                   {SUPPORTED_LANG.map((lang)=> 
+                                <option 
+                                      key={lang.identifier}>{lang.name}</option>)}
                             </select>
                         )}
                     <button className="lg:py-1 px-0 h-6 lg:h-10 lg:px-2 my-auto bg-red-800 rounded-sm text-white" onClick = { handleGptSearchClick }>
@@ -82,7 +84,7 @@ const Header =  ()=>{
                                            </div>
                                          : <div className="flex font-semibold px-1 lg:p-1">
                                             <SiGooglegemini className="lg:mx-1 text-xl lg:text-2xl pr-1" />
-                                            <span className="text-xs lg:text-sm text-center">AI Search</span>
+                                            <span className="text-xs lg:text-sm text-center py-1">AI Search</span>
                                     </div>}
                     </button>
                      <div className="h-5 w-5 lg:h-10 lg:w-10 mx-1 lg:mx-2 my-auto bg-red-300">

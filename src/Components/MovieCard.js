@@ -42,7 +42,7 @@ const MovieCard = ({ cardInfo }) => {
 
     return (
         <>
-            { isOpen || isOpentwo ? <div className='fixed inset-0 bg-opacity-40  backdrop-blur-xl z-40'></div>: null}
+            { isOpen || isOpentwo ? <div className='fixed inset-0 bg-opacity-60 bg-black backdrop-blur-xl z-40'></div>: null}
 
             <article>
                 <div className="w-36 lg:w-44 my-4 mx-2 lg:mx-1 text-white cursor-pointer transition-transform duration-50 transform hover:scale-90">
@@ -54,7 +54,7 @@ const MovieCard = ({ cardInfo }) => {
             </article>
             {isOpen &&
                 <Dialog isOpen={ isOpen } setOpen={ setIsOpen } 
-                     className="w-full h-[40%] lg:w-[60%] lg:h-[70%] rounded-xl text-white bg-black border-2 
+                     className="w-full h-[50%] lg:w-[60%] lg:h-[70%] rounded-xl text-white bg-black border-2 
                                 fixed border-white overflow-y-scroll no-scrollbar">
                     <header>
                         <RxCross2 className="lg:text-2xl text-xl mx-2 my-2 font-extrabold mt-2" onClick={ handleFirstClick } />

@@ -19,11 +19,11 @@ const VideoBackground = ({movieId})=>{
                     title="Inside Out 2 | Announce Trailer" 
                     frameborder="0" 
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-                    referrerpolicy="strict-origin-when-cross-origin" 
+                    referrerPolicy="strict-origin-when-cross-origin" 
                     allowFullScreen>
             </iframe>
            </div>
-           <div className="w-full h-[18%] top-[34%] md:top-[20%] lg:top-[100%] bg-black absolute"></div>
+           <div className="w-full h-[18%] top-[26%] md:top-[20%] lg:top-[100%] bg-black absolute"></div>
          </div>
       </>
      );
