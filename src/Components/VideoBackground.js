@@ -23,7 +23,7 @@ const VideoBackground = ({movieId})=>{
                     allowFullScreen>
             </iframe>
            </div>
-           <div className="w-full h-[18%] top-[20%] md:top-[20%] lg:top-[100%] bg-black absolute"></div>
+           <div className="w-full h-[18%] top-[34%] md:top-[20%] lg:top-[100%] bg-black absolute"></div>
          </div>
       </>
      );

@@ -14,7 +14,7 @@ const Videotitle = ({ title, overview }) => {
                         aspect-video text-white 
                         bg-gradient-to-r from-black opacity-70 cursor-default">
             <h1 className="text-sm lg:text-2xl font-bold">{title}</h1>
-            <p className={`py-4 lg:py-6 text-xs lg:text-sm w-2/4 ${ !isTruncated ?'line-clamp-1':''}`}>{overview}</p>
+            <p className={`py-4 lg:py-6 text-xs lg:text-sm w-2/4 ${ !isTruncated ?'line-clamp-2':'line-clamp-3'}`}>{overview}</p>
             <div  className={`${ !isTruncated? 'mt-2 lg:mt-6': 'lg:mt-2'}`}>
                 <button className= "bg-white text-black w-[12%] lg:w-[8%] mx-1 px-1 py-1 text-xs rounded-lg hover:bg-opacity-80">
                       <AiFillCaretRight  className="inline text-xs lg:text-lg font-bold mb-1"/>Play
