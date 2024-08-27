@@ -98,7 +98,7 @@ const Login = ()=>{
                   className="enhanced-image"/>
                   <img src={BG_URL}
                   alt="background_img" 
-                  className="block lg:hidden h-full enhanced-image"/>
+                  className="block lg:hidden enhanced-image"/>
                   <Footer/>
             </div>
             <form onSubmit= {(e)=> e.preventDefault()}className="w-3/4 md:w-5/12 md:py-12 lg:w-3/12 p-6 absolute lg:p-12
