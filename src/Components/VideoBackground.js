@@ -17,7 +17,6 @@ const VideoBackground = ({movieId})=>{
                     className="w-full aspect-video h-full overflow-hidden" 
                     src={ "https://www.youtube.com/embed/"+TrailerVideo?.key+"?si=&controls=1&hd=1&showinfo=0"+TrailerVideo?.key+"?loop=1&autoplay=1&mute=1&modestbranding=1&rel=0"}
                     title="Inside Out 2 | Announce Trailer" 
-                    frameborder="0" 
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
                     referrerPolicy="strict-origin-when-cross-origin" 
                     allowFullScreen>
