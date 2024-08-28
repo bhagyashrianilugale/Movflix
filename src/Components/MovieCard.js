@@ -103,8 +103,6 @@ const MovieCard = ({ cardInfo }) => {
                         <div className="sm:block lg:hidden ">
                            <YouTube videoId={ cardTrailerVideo?.key }
                             opts={ youTubeOpts }
-                            height='580'
-                            width='799'
                             onError={ onError }
                             />
                         </div>
