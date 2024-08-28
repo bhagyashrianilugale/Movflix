@@ -88,23 +88,23 @@ const MovieCard = ({ cardInfo }) => {
                         className="w-full h-[50%] lg:w-[60%] lg:h-[70%] rounded-xl text-white bg-black border-2 
                                 fixed border-white overflow-hidden"
                       >
-                         <div className="bg-black w-full h-[10%] absolute">
+                         <div className="bg-black w-full h-[12%] lg:h-[10%] absolute">
                            <RxCross2 className="text-2xl mx-3 my-1 font-extrabold mt-2 text-white" onClick={ handleSecondClick } />
                         </div>
-                        <div className="bg-black w-full h-[10%] top-[92%] lg:top-0 lg:mt-[52%] absolute"></div>
-                        <div className="block sm:hidden">
+                        <div className="bg-black w-full h-[10%] top-[91%] lg:top-0 lg:mt-[52%] absolute"></div>
+                        <div className="lg:block sm:hidden">
                            <YouTube videoId={ cardTrailerVideo?.key }
                             opts={ youTubeOpts }
                             height='460'
-                            width='799'
+                            width='960'
                             onError={ onError }
                             />
                         </div>
-                        <div className="block lg:hidden ">
+                        <div className="sm:block lg:hidden ">
                            <YouTube videoId={ cardTrailerVideo?.key }
                             opts={ youTubeOpts }
-                            height='450'
-                            width='380'
+                            height='580'
+                            width='799'
                             onError={ onError }
                             />
                         </div>
