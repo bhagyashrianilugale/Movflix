@@ -67,19 +67,19 @@ const Header =  ()=>{
     return(
         <>
           <div className="z-10 lg:p-1 lg:mb-0 mb-10 w-screen absolute bg-gradient-to-b from-black flex justify-between">
-               <h1 className="w-30 px-10 lg:my-auto lg:py-0 py-2 text-xl lg:text-3xl font-bold text-red-600 cursor-default" >MOVFLIX</h1>
+               <h1 className="w-30 px-10 lg:my-auto lg:py-0 py-2 text-xl lg:text-3xl font-bold text-red-800 cursor-default" >MOVFLIX</h1>
                { user && (
                     <div className="flex py-1 lg:p-2">
                         { showGptSearch && (
-                            <select className="mx-1 py-1 my-auto bg-gray-950 text-white" onChange = { handleLangChange }>
+                            <select className="mx-4 py-1 my-auto bg-gray-950 text-white" onChange = { handleLangChange }>
                                    {SUPPORTED_LANG.map((lang)=> 
                                 <option 
                                       key={lang.identifier}>{lang.name}</option>)}
                             </select>
                         )}
-                    <button className="lg:py-1 px-0 h-6 lg:h-10 lg:px-2 my-auto bg-red-800 rounded-sm text-white" onClick = { handleGptSearchClick }>
+                    <button className="lg:py-1 mx-4 px-0 h-6 lg:h-10 lg:px-2 my-auto bg-red-800 rounded-sm text-white" onClick = { handleGptSearchClick }>
                          { showGptSearch ? <div className="flex font-semibold p-1">
-                                            <IoMdHome className="text-sm lg:text-xl mx-1 mr-2"/>
+                                            <IoMdHome className="text-sm lg:text-xl mx-2 mr-2"/>
                                                 <span className="text-xs pb-2 lg:text-sm">Page</span>
                                            </div>
                                          : <div className="flex font-semibold px-1 lg:p-1">
@@ -87,7 +87,7 @@ const Header =  ()=>{
                                             <span className="text-xs lg:text-sm text-center">AI Search</span>
                                     </div>}
                     </button>
-                     <div className="h-5 w-5 lg:h-10 lg:w-10 mx-1 lg:mx-2 my-auto bg-red-300">
+                     <div className="h-5 w-5 lg:h-10 lg:w-10 mx-2 lg:mx-2 my-auto bg-red-300">
                         <img 
                          src='https://wallpapers.com/images/hd/netflix-profile-pictures-1000-x-1000-qo9h82134t9nv0j0.jpg'
                          atl="usericon"/>

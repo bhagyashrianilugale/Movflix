@@ -64,7 +64,7 @@ const MovieCard = ({ cardInfo }) => {
                         <div className="w-1/3">
                             <img className="h-[70%] lg:w-[70%] w-[90%] my-4 mx-auto rounded-sm enhanced-image" 
                                   id={ posterId } src={ IMG_CDN_URL + posterPath } alt="movie_card_img" />
-                            <button className="bg-white text-black mx-4 font-extrabold lg:mx-16 px-2 mt-4 border-double
+                            <button className="bg-white text-black mx-10 font-extrabold lg:mx-20 px-2 mt-4 border-double
                                      border-black border-2 rounded-lg hover:bg-opacity-80 text-sm" onClick={ handleSecondClick }>
                                 <AiFillCaretRight className="inline text-xl lg:text-2xl font-bold" />Play
                             </button>
@@ -92,14 +92,7 @@ const MovieCard = ({ cardInfo }) => {
                            <RxCross2 className="text-2xl mx-3 my-1 font-extrabold mt-2 text-white" onClick={ handleSecondClick } />
                         </div>
                         <div className="bg-black w-full h-[10%] top-[91%] lg:top-0 lg:mt-[52%] absolute"></div>
-                        {/* <div className="lg:block sm:hidden">
-                           <YouTube videoId={ cardTrailerVideo?.key }
-                            opts={ youTubeOpts }
-                            
-                            onError={ onError }
-                            />
-                        </div> */}
-                        <div>
+                        <div  className="video-responsive">
                            <YouTube videoId={ cardTrailerVideo?.key }
                             opts={ youTubeOpts }
                             onError={ onError }
