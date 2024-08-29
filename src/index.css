@@ -17,6 +17,7 @@
 
 body{
   overflow-x: hidden;
+  font-family: 'Montserrat', sans-serif;
 }
 
 .enhanced-image{
@@ -26,4 +27,5 @@ body{
     saturate(100%)     /* Increase saturation */
     hue-rotate(4deg)   /* Slight hue adjustment */
 }
+
 
