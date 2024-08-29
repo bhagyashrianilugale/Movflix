@@ -1,7 +1,7 @@
 import { useSelector } from "react-redux";
 import useTrailerVideos from "../hooks/useTrailerVideos";
 
-const VideoBackground = ({movieId})=>{
+const VideoBackground = ({movieId, playStatus})=>{
 
    const TrailerVideo = useSelector((store) => store?.movies?.trailerVideos);
 
@@ -15,7 +15,7 @@ const VideoBackground = ({movieId})=>{
             <div className="w-full h-[6%] lg:h-[12%] bg-black absolute"></div>
             <iframe 
                     className="w-full aspect-video h-full overflow-hidden" 
-                    src={ "https://www.youtube.com/embed/"+TrailerVideo?.key+"?si=&controls=1&hd=1&showinfo=0"+TrailerVideo?.key+"?loop=1&autoplay=1&mute=1&modestbranding=1&rel=0"}
+                    src={ "https://www.youtube.com/embed/"+TrailerVideo?.key+`?si=&controls=${playStatus}&hd=1&showinfo=0`+TrailerVideo?.key+"?playlist="+TrailerVideo?.key+"&loop=1&autoplay=1&mute=1&modestbranding=1&rel=0"}
                     title="Inside Out 2 | Announce Trailer" 
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
                     referrerPolicy="strict-origin-when-cross-origin" 

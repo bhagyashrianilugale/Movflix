@@ -2,7 +2,7 @@ import { useState } from "react";
 import { AiFillCaretRight } from "react-icons/ai";
 import { TbAlertSquareRounded } from "react-icons/tb";
 
-const Videotitle = ({ title, overview }) => {
+const Videotitle = ({ title, overview, playFunc }) => {
     const [ isTruncated , setIsTruncated ] = useState(false);
 
    const handleTruncate = ()=>{
@@ -14,9 +14,11 @@ const Videotitle = ({ title, overview }) => {
                         aspect-video text-white 
                         bg-gradient-to-r from-black opacity-70 cursor-default">
             <h1 className="text-sm lg:text-2xl font-extrabold lg:font-bold">{title}</h1>
-            <p className={`py-1 lg:py-6 text-xs lg:text-sm w-2/4 ${ !isTruncated ?'line-clamp-2':'line-clamp-3'}`}>{overview}</p>
+            <p className={`py-1 lg:py-6 text-xs lg:text-sm w-2/4 ${ !isTruncated ?'line-clamp-1':'line-clamp-3'}`}>{overview}</p>
             <div  className={`${ !isTruncated? 'mt-1 lg:mt-6': 'lg:mt-2'}`}>
-                <button className= "bg-white text-black w-[14%] lg:w-[8%] mx-1 px-1 py-1 text-xs rounded-lg hover:bg-opacity-80">
+                <button 
+                      className= "bg-white text-black w-[14%] lg:w-[8%] mx-1 px-1 py-1 text-xs rounded-lg hover:bg-opacity-80"l
+                       onClick={()=>playFunc(0)}>
                       <AiFillCaretRight  className="inline text-xs lg:text-lg font-bold mb-1"/>Play
                 </button>
                 <button 
