@@ -19,12 +19,12 @@ const Videotitle = ({ title, overview, playFunc }) => {
                 <button 
                       className= "bg-white text-black w-[14%] lg:w-[8%] mx-1 px-1 py-1 lg:text-lg rounded-lg hover:bg-opacity-80"l
                        onClick={()=>playFunc(0)}>
-                      <AiFillCaretRight  className="inline text-sm lg:text-lg font-bold mb-1"/>Play
+                      <AiFillCaretRight  className="inline text-xs lg:text-2xl font-bold mb-1"/>Play
                 </button>
                 <button 
                       className="bg-gray-500 px-1 mx-1 w-[28%] lg:w-[12%] py-1 text-lg text-white hover:bg-opacity-80 rounded-lg"
                       onClick={ handleTruncate } > 
-                      <TbAlertSquareRounded className="inline  text-sm lg:text-lg  font-bold mb-1"
+                      <TbAlertSquareRounded className="inline  text-sm lg:text-2xl  font-bold mb-1"
                       /> { !isTruncated? 'More Info': 'Less Info'}
                 </button>
             </div>
