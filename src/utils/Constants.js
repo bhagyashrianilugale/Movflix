@@ -51,8 +51,8 @@ export const SUPPORTED_LANG = [
 
 
 export const youTubeOpts = {
-  height: '450',
-  width: '380',
+  height:'420',
+  width:'740',
   playerVars: {
   autoplay: 1,          // Do not autoplay
   controls: 1,          // Hide controls

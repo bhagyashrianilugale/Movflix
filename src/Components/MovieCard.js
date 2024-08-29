@@ -99,13 +99,11 @@ const MovieCard = ({ cardInfo }) => {
                             onError={ onError }
                             />
                         </div> */}
-                        <div className="sm:block lg:hidden ">
+                        <div>
                            <YouTube videoId={ cardTrailerVideo?.key }
                             opts={ youTubeOpts }
                             onError={ onError }
-                            height='460'
-                            width='960'
-                            />
+                           />
                         </div>
                 </Dialog>}
             {error && <Error />}
