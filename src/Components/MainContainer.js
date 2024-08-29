@@ -5,7 +5,7 @@ import { useState } from "react";
 
 const MainContainer = ()=>{
     const movies = useSelector((store)=>store?.movies?.nowPlayingMovies);
-    const [isPlay, setIsPlay ] = useState(1);
+    const [isPlay, setIsPlay ] = useState(null);
 
     if(movies === null) return;
 
