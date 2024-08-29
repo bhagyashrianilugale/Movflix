@@ -77,12 +77,12 @@ const Header =  ()=>{
                                       key={lang.identifier}>{lang.name}</option>)}
                             </select>
                         )}
-                    <button className="lg:py-1 mx-4 px-0 h-6 lg:h-10 lg:px-2 my-auto bg-red-800 rounded-sm text-white" onClick = { handleGptSearchClick }>
+                    <button className="lg:py-1 mx-2 px-0 h-6 lg:h-10 lg:px-2 my-auto bg-red-800 rounded-sm text-white" onClick = { handleGptSearchClick }>
                          { showGptSearch ? <div className="flex font-semibold p-1">
                                             <IoMdHome className="text-sm lg:text-xl mx-2 mr-2"/>
                                                 <span className="text-xs pb-2 lg:text-sm">Page</span>
                                            </div>
-                                         : <div className="flex font-semibold px-1 lg:p-1">
+                                         : <div className="flex font-semibold px-2 lg:p-1">
                                             <SiGooglegemini className="lg:mx-1 text-xl lg:text-2xl pr-1" />
                                             <span className="text-xs lg:text-sm text-center">AI Search</span>
                                     </div>}
