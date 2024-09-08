@@ -83,11 +83,11 @@ const Header =  ()=>{
                           className="md:py-1 mx-2 px-0 h-6 md:h-10 md:px-2 my-auto bg-red-800 rounded-sm text-white" 
                           onClick = { handleGptSearchClick }>
                          { showGptSearch ? <div className="flex font-semibold p-1">
-                                            <IoMdHome className="text-lg md:text-xl md:mx-2 mr-2"/>
-                                                <span className="text-xs mb-8 md:text-sm">Page</span>
+                                            <IoMdHome className="text-lg md:text-2xl md:mx-2 mr-2"/>
+                                                <span className="text-xs mb-8 md:text-lg">Page</span>
                                            </div>
                                          : <div className="flex font-semibold px-2 md:p-1">
-                                            <SiGooglegemini className="md:mx-1 text-xl md:text-3xl pr-1" />
+                                            <SiGooglegemini className="md:mx-1 text-lg md:text-3xl pr-1" />
                                             <span className="text-xs md:text-lg text-center">AI Search</span>
                                     </div>}
                     </button>
