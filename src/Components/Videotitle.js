@@ -17,7 +17,7 @@ const Videotitle = ({ title, overview, playFunc }) => {
             <p className={`py-1 md:py-6 font-sans text-sm md:text-lg w-2/4 ${ !isTruncated ?'line-clamp-1':'line-clamp-3'}`}>{overview}</p>
             <div  className={`${ !isTruncated? 'mt-1 md:mt-6': 'md:mt-2'}`}>
                 <button 
-                      className= "bg-white text-black w-[30%] text-sm sm:w-[14%] md:w-[8%] mx-1 p-1 md:text-lg rounded-lg hover:bg-opacity-80"l
+                      className= "bg-white text-black w-[20%] text-sm sm:w-[14%] md:w-[8%] mx-1 p-1 md:text-lg rounded-lg hover:bg-opacity-80"l
                        onClick={()=>playFunc(0)}>
                       <AiFillCaretRight  className="inline text-xl md:text-2xl font-bold mb-1"/>Play
                 </button>

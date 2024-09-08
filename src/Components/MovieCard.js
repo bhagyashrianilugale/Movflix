@@ -45,8 +45,8 @@ const MovieCard = ({ cardInfo }) => {
             { isOpen || isOpentwo ? <div className='fixed inset-0 bg-opacity-60 bg-black backdrop-blur-xl z-40'></div>: null}
 
             <article>
-                <div className="w-36 lg:w-44 my-4 mx-2 lg:mx-1 text-white cursor-pointer transition-transform duration-50 transform hover:scale-90">
-                    <img className="h-32 w-44 lg:h-26 md:h-34 md:w-40 lg:h-full lg:w-44 enhanced-image" 
+                <div className="w-36 md:w-44 my-4 mx-2 md:mx-1 text-white cursor-pointer transition-transform duration-50 transform hover:scale-90">
+                    <img className="h-32 w-44 sm:h-26 sm:w-38 md:h-full md:w-44 enhanced-image" 
                          src={IMG_CDN_URL + posterPath} alt="movie_card_img" id={posterId} onClick={ handleFirstClick } />
                     <p className="truncate text-sm font-semibol">{title}</p>
                     <p className="text-xs font-thin">{releaseDate}</p>
@@ -54,19 +54,19 @@ const MovieCard = ({ cardInfo }) => {
             </article>
             {isOpen &&
                 <Dialog isOpen={ isOpen } setOpen={ setIsOpen } 
-                     className="w-full h-[50%] lg:w-[60%] lg:h-[70%] rounded-xl text-white bg-black border-2 
+                     className="w-full sm:h-[60%] md:w-[60%] md:h-[70%] rounded-xl text-white bg-black border-2 
                                 fixed border-white overflow-y-scroll no-scrollbar">
                     <header>
-                        <RxCross2 className="lg:text-2xl text-xl mx-2 my-2 font-extrabold mt-2" onClick={ handleFirstClick } />
-                        <p className="font-bold py-1 text-lg lg:text-xl mx-2 lg:px-8 inline-flex">{title}</p>
+                        <RxCross2 className="md:text-2xl text-xl mx-2 my-2 font-extrabold mt-2" onClick={ handleFirstClick } />
+                        <p className="font-bold py-1 text-lg md:text-xl mx-2 md:px-8 inline-flex">{title}</p>
                     </header>
                     <section className="flex mx-2">
                         <div className="w-1/3">
-                            <img className="h-[70%] lg:w-[70%] w-[90%] my-4 mx-auto rounded-sm enhanced-image" 
+                            <img className="h-[70%] md:w-[70%] w-[90%] my-4 mx-auto rounded-sm enhanced-image" 
                                   id={ posterId } src={ IMG_CDN_URL + posterPath } alt="movie_card_img" />
-                            <button className="bg-white text-black mx-5 font-extrabold lg:mx-20 px-2 mt-4 border-double
+                            <button className="bg-white text-black mx-5 font-extrabold md:mx-20 px-2 mt-4 border-double
                                      border-black border-2 rounded-lg hover:bg-opacity-80 text-sm" onClick={ handleSecondClick }>
-                                <AiFillCaretRight className="inline text-xl lg:text-2xl font-bold" />Play
+                                <AiFillCaretRight className="inline text-xl md:text-2xl font-bold" />Play
                             </button>
                         </div>
                         <div className="w-2/3 pr-6 p-2 opacity-80 text-sm">
@@ -78,21 +78,21 @@ const MovieCard = ({ cardInfo }) => {
                                  <AiFillFire className="inline text-lg mx-2 mb-2 text-orange-600" />
                             </span><br/>
                             <b>Release Date:</b><span>&nbsp;{releaseDate}</span>
-                            {overview && <p className="py-1  lg:line-clamp-none line-clamp-3"><b>Overview: </b> {overview}</p>}
+                            {overview && <p className="py-1  md:line-clamp-none line-clamp-3"><b>Overview: </b> {overview}</p>}
                         </div>
                     </section>
                 </Dialog>
             }
             {isOpentwo &&
                 <Dialog isOpen={ isOpentwo } setOpen={ setIsOpentwo }
-                        className="w-full h-[50%] lg:w-[60%] lg:h-[70%] rounded-xl text-white bg-black border-2 
+                        className="w-full h-[50%] md:w-[60%] md:h-[70%] rounded-xl text-white bg-black border-2 
                                 fixed border-white overflow-hidden"
                       >
-                         <div className="bg-black w-full h-[12%] lg:h-[10%] absolute">
+                         <div className="bg-black w-full h-[12%] md:h-[10%] absolute">
                            <RxCross2 className="text-2xl mx-3 my-1 font-extrabold mt-2 text-white" onClick={ handleSecondClick } />
                         </div>
-                        <div className="bg-black w-full h-[10%] top-[91%] lg:top-0 lg:mt-[52%] absolute"></div>
-                        <div  className="video-smallScreen lg:video-largeScreen">
+                        <div className="bg-black w-full h-[10%] top-[91%] md:top-0 lg:mt-[52%] absolute"></div>
+                        <div  className="video-smallScreen md:video-largeScreen">
                            <YouTube videoId={ cardTrailerVideo?.key }
                             opts={ youTubeOpts }
                             onError={ onError }
