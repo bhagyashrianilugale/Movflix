@@ -98,14 +98,14 @@ const Login = ()=>{
                   className="enhanced-image"/>
                   <img src={BG_URL}
                   alt="background_img" 
-                  className="block lg:hidden enhanced-image"/>
+                  className="block md:hidden enhanced-image"/>
                   <Footer/>
             </div>
-            <form onSubmit= {(e)=> e.preventDefault()}className="w-3/4 md:w-5/12 md:py-12 lg:w-3/12 p-6 absolute lg:p-8
-                          bg-black my-[20%] md:my-[10%] lg:my-[10%] mx-10 md:mx-60 lg:mx-auto right-0 left-0
+            <form onSubmit= {(e)=> e.preventDefault()}className="w-3/4 sm:w-5/12 sm:py-12 md:w-3/12 p-6 absolute md:p-8
+                          bg-black my-[20%] sm:my-[10%] md:my-[10%] mx-10 sm:mx-60 md:mx-auto right-0 left-0
                           text-white rounded-xl bg-opacity-80 
                            cursor-pointer">
-                <h1 className="font-bold text-xl lg:text-2xl py-1 lg:py-2">{isSignIn ? "Sign In" : "Sign Up"}</h1>
+                <h1 className="font-bold text-xl md:text-2xl py-1 md:py-2">{isSignIn ? "Sign In" : "Sign Up"}</h1>
 
                 {!isSignIn &&  <input type="text"
                       ref={username}

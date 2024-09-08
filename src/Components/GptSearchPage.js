@@ -9,7 +9,7 @@ const GptSearchPage = () => {
   return (
     <>
         <div className="fixed -z-10">
-                   <img  className="h-screen w-full lg:h-screen lg:w-screen enhanced-image" 
+                   <img  className="h-screen w-full md:h-screen md:w-screen enhanced-image" 
                          src={SEARCH_PAGE_BG_URL}
                          alt="background_img"/>
         </div>

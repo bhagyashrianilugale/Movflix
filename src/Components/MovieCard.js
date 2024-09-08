@@ -54,17 +54,17 @@ const MovieCard = ({ cardInfo }) => {
             </article>
             {isOpen &&
                 <Dialog isOpen={ isOpen } setOpen={ setIsOpen } 
-                     className="w-full sm:h-[60%] md:w-[60%] md:h-[70%] rounded-xl text-white bg-black border-2 
+                     className="w-full h-[50%] sm:h-[60%] md:w-[60%] md:h-[70%] rounded-xl text-white bg-black border-2 
                                 fixed border-white overflow-y-scroll no-scrollbar">
                     <header>
                         <RxCross2 className="md:text-2xl text-xl mx-2 my-2 font-extrabold mt-2" onClick={ handleFirstClick } />
-                        <p className="font-bold py-1 text-lg md:text-xl mx-2 md:px-8 inline-flex">{title}</p>
+                        <p className="font-bold py-1 text-lg md:text-xl px-4 sm:px-8 inline-flex">{title}</p>
                     </header>
                     <section className="flex mx-2">
                         <div className="w-1/3">
-                            <img className="h-[70%] md:w-[70%] w-[90%] my-4 mx-auto rounded-sm enhanced-image" 
+                            <img className="h-[70%] w-[90%] sm:w-[70%] sm:h-[70%] md:w-[70%] sm:my-2 sm:mx-6 md:mx-auto rounded-sm enhanced-image" 
                                   id={ posterId } src={ IMG_CDN_URL + posterPath } alt="movie_card_img" />
-                            <button className="bg-white text-black mx-5 font-extrabold md:mx-20 px-2 mt-4 border-double
+                            <button className="bg-white text-black mx-2 sm:mx-12 px-1 font-extrabold md:mx-20 md:px-2 mt-4 border-double
                                      border-black border-2 rounded-lg hover:bg-opacity-80 text-sm" onClick={ handleSecondClick }>
                                 <AiFillCaretRight className="inline text-xl md:text-2xl font-bold" />Play
                             </button>
@@ -85,19 +85,26 @@ const MovieCard = ({ cardInfo }) => {
             }
             {isOpentwo &&
                 <Dialog isOpen={ isOpentwo } setOpen={ setIsOpentwo }
-                        className="w-full h-[50%] md:w-[60%] md:h-[70%] rounded-xl text-white bg-black border-2 
+                        className="w-full h-[50%] sm:h-[60%] md:w-[60%] md:h-[70%] rounded-xl text-white bg-black border-2 
                                 fixed border-white overflow-hidden"
                       >
-                         <div className="bg-black w-full h-[12%] md:h-[10%] absolute">
+                        
+                    <div className="h-0 pb-[56.25%]"> {/* Maintain aspect ratio */}
+                        <div className="bg-black w-full h-[14%] md:h-[10%]  z-10 absolute">
                            <RxCross2 className="text-2xl mx-3 my-1 font-extrabold mt-2 text-white" onClick={ handleSecondClick } />
                         </div>
-                        <div className="bg-black w-full h-[10%] top-[91%] md:top-0 lg:mt-[52%] absolute"></div>
-                        <div  className="video-smallScreen md:video-largeScreen">
-                           <YouTube videoId={ cardTrailerVideo?.key }
-                            opts={ youTubeOpts }
-                            onError={ onError }
-                           />
-                        </div>
+                        <div className="bg-black w-full h-[10%] top-[5%] md:top-0 mt-[88%] sm:mt-[51%] md:mt-[52%] absolute z-10"></div>
+
+                         <YouTube videoId={ cardTrailerVideo?.key }
+                                     opts={{
+                                     ...youTubeOpts,
+                                     width: '100%',
+                                     height: '100%',
+                                  }}
+                                 className="absolute top-0 left-0 w-full h-full"
+                                 onError={ onError }
+                          />
+                   </div>
                 </Dialog>}
             {error && <Error />}
         </>
